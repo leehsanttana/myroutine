@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useHydrated } from "@/hooks/useHydrated";
-import { montarReminders, pushConfigurado, sincronizarPush } from "@/lib/push";
+import { assinarPush, montarReminders, pushConfigurado, sincronizarPush } from "@/lib/push";
 import { useAppStore } from "@/store/useAppStore";
 
 /**
@@ -22,6 +22,13 @@ export function usePushSync() {
     if (Notification.permission !== "granted") return;
 
     const reminders = montarReminders(atividades, dominios, encaixeSemanal);
-    void sincronizarPush(reminders);
+    // Com lembretes ativos, garante a inscrição (cria se ainda não existir —
+    // ex.: permissão concedida antes do push estar disponível). Sem lembretes,
+    // apenas atualiza o servidor se já houver inscrição.
+    if (reminders.length > 0) {
+      void assinarPush(reminders);
+    } else {
+      void sincronizarPush(reminders);
+    }
   }, [hidratado, atividades, dominios, encaixeSemanal]);
 }

@@ -1,8 +1,14 @@
 import type { AlocacaoSemanal, Atividade, Dominio } from "@/lib/types";
 import { horarioValido } from "@/lib/lembretes";
 
-const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? "";
-const PUSH_API = process.env.NEXT_PUBLIC_PUSH_API ?? "";
+// Valores públicos e fixos (chave pública VAPID + URL do Worker). Podem ser
+// sobrescritos por variáveis de build, mas os padrões garantem que o push
+// funcione mesmo sem configurá-las no painel do Pages.
+const VAPID_PUBLIC_KEY =
+  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ||
+  "BFdLppfhB5ihyF2IlAYRwF3wv5KFyu2raZLtyIGScGe5oJk8daz8qHLqKw80mApYurpkZ-MZIOXvJiJGMrTzet4";
+const PUSH_API =
+  process.env.NEXT_PUBLIC_PUSH_API || "https://myroutine-push.leonamsanttana.workers.dev";
 
 export interface Reminder {
   nome: string;
