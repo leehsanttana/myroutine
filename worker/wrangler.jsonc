@@ -24,7 +24,7 @@
     // Chave pública VAPID (a mesma usada no app). Pública — pode ficar aqui.
     "VAPID_PUBLIC_KEY": "BFdLppfhB5ihyF2IlAYRwF3wv5KFyu2raZLtyIGScGe5oJk8daz8qHLqKw80mApYurpkZ-MZIOXvJiJGMrTzet4",
     // Origem do app para o CORS (ex.: https://myroutine.pages.dev). "*" libera todas.
-    "ALLOWED_ORIGIN": "*",
+    "ALLOWED_ORIGIN": "https://myroutine-51e.pages.dev",
   },
   // A chave PRIVADA vai como secret: `npx wrangler secret put VAPID_PRIVATE_KEY`
 }

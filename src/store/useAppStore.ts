@@ -186,8 +186,16 @@ export const useAppStore = create<AppState>()(
     }),
     {
       name: "myroutine-storage",
-      version: 1,
+      version: 2,
       skipHydration: true,
+      // v2: remove as atividades pré-programadas antigas, mantendo os domínios.
+      migrate: (persisted, version) => {
+        const state = persisted as AppState;
+        if (version < 2) {
+          return { ...state, atividades: [], encaixeSemanal: [], conclusoes: [] };
+        }
+        return state;
+      },
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         dominios: state.dominios,
