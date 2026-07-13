@@ -44,6 +44,7 @@
   --color-surface: var(--surface);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
+  --color-violet: var(--violet);
   --color-conflict: var(--conflict);
   --color-movimento: var(--movimento);
   --color-estudo: var(--estudo);
@@ -51,17 +52,20 @@
 }
 
 :root {
-  --paper: #f5f4f1;
-  --surface: #ffffff;
+  --paper: #f8f4e9;
+  --surface: #fefdfb;
   --ink: #1b1f2a;
   --ink-muted: #8b8a82;
+  --violet: #7c3aed;
   --conflict: #7a3b63;
   --movimento: #e24e6b;
   --estudo: #2e5aa8;
   --alimentacao: #3e9e6e;
 
-  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.06);
-  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.03), 0 4px 12px rgb(0 0 0 / 0.05);
+  /* sombras duras, deslocadas, sem blur — assinatura neo-brutalista */
+  --shadow-card: 2px 2px 0 0 var(--ink);
+  --shadow-soft: 1px 1px 0 0 var(--ink);
+  --shadow-hard-lg: 4px 4px 0 0 var(--ink);
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -69,27 +73,27 @@
   --card-foreground: var(--ink);
   --popover: var(--surface);
   --popover-foreground: var(--ink);
-  --primary: var(--ink);
-  --primary-foreground: var(--paper);
+  --primary: var(--violet);
+  --primary-foreground: #ffffff;
   --secondary: var(--surface);
   --secondary-foreground: var(--ink);
-  --muted: #e2e0d8;
+  --muted: #f0eff2;
   --muted-foreground: var(--ink-muted);
   --accent: var(--surface);
   --accent-foreground: var(--ink);
   --destructive: var(--conflict);
-  --border: #e4e2db;
-  --input: #dedcd4;
-  --ring: var(--ink);
-  --radius: 0.875rem;
+  --border: var(--ink);
+  --input: var(--ink);
+  --ring: var(--violet);
+  --radius: 0.625rem;
   --sidebar: var(--surface);
   --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--ink);
-  --sidebar-primary-foreground: var(--paper);
+  --sidebar-primary: var(--violet);
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: var(--paper);
   --sidebar-accent-foreground: var(--ink);
-  --sidebar-border: #cac8bf;
-  --sidebar-ring: var(--ink);
+  --sidebar-border: var(--ink);
+  --sidebar-ring: var(--violet);
 }
 
 @layer base {
@@ -114,15 +118,8 @@
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
-  .grain-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 50;
-    pointer-events: none;
-    opacity: 0.05;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 180px 180px;
+  .shadow-hard-lg {
+    box-shadow: var(--shadow-hard-lg);
   }
 }
 

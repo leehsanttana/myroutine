@@ -30,10 +30,10 @@ export function WeekDayChips({ selecionado, diaHoje, onSelect }: WeekDayChipsPro
               aria-pressed={ativo}
               aria-label={`${DIA_LABELS[dia]}, ${count} atividade(s)`}
               className={cn(
-                "flex flex-1 flex-col items-center gap-1 rounded-2xl px-1 py-2.5 transition-colors focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink",
+                "flex flex-1 flex-col items-center gap-1 rounded-lg border-2 px-1 py-2.5 transition-colors focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink",
                 ativo
-                  ? "bg-ink text-paper"
-                  : "bg-surface text-ink shadow-soft hover:bg-muted",
+                  ? "border-ink bg-primary text-primary-foreground"
+                  : "border-border bg-surface text-ink shadow-soft hover:bg-muted",
               )}
             >
               <span className="flex items-center gap-1 text-xs font-semibold">
@@ -42,7 +42,7 @@ export function WeekDayChips({ selecionado, diaHoje, onSelect }: WeekDayChipsPro
                   <span
                     className={cn(
                       "size-1.5 rounded-full",
-                      ativo ? "bg-paper" : "bg-movimento",
+                      ativo ? "bg-paper" : "bg-primary",
                     )}
                     aria-hidden="true"
                   />

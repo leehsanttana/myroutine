@@ -16,7 +16,7 @@ interface DomainSelectProps {
 export function DomainSelect({ dominios, value, onChange }: DomainSelectProps) {
   return (
     <Select value={value} onValueChange={onChange}>
-      <SelectTrigger className="h-10 w-full rounded-xl bg-surface">
+      <SelectTrigger className="h-10 w-full rounded-lg bg-surface">
         <SelectValue placeholder="Selecione um domínio" />
       </SelectTrigger>
       <SelectContent>

@@ -4,7 +4,7 @@ import { Bell, Check } from "lucide-react";
 import { DomainBadge } from "@/components/domain/domain-badge";
 import { hojeISO } from "@/lib/date";
 import type { Atividade, Dominio } from "@/lib/types";
-import { cn, corPastel } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store/useAppStore";
 
 interface TodayActivityItemProps {
@@ -24,8 +24,8 @@ export function TodayActivityItem({ atividade, dominio }: TodayActivityItemProps
 
   return (
     <div
-      className="flex items-center gap-4 rounded-3xl p-4 shadow-card transition-shadow"
-      style={{ backgroundColor: corPastel(cor) }}
+      className="flex items-center gap-4 rounded-xl border-2 bg-surface p-4 shadow-card"
+      style={{ borderColor: cor }}
     >
       <button
         type="button"
@@ -35,7 +35,7 @@ export function TodayActivityItem({ atividade, dominio }: TodayActivityItemProps
           feita ? `Desmarcar ${atividade.nome}` : `Marcar ${atividade.nome} como feita`
         }
         className={cn(
-          "flex size-11 shrink-0 items-center justify-center rounded-full border-2 bg-surface text-surface transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink",
+          "flex size-11 shrink-0 items-center justify-center rounded-lg border-2 bg-surface text-surface transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink",
           !feita && "text-transparent",
         )}
         style={{ backgroundColor: feita ? cor : "#fff", borderColor: cor }}

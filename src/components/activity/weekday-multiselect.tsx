@@ -22,7 +22,7 @@ export function WeekdayMultiselect({ value, onChange }: WeekdayMultiselectProps)
         <ToggleGroupItem
           key={dia}
           value={String(dia)}
-          className="h-10 min-w-10 rounded-full border border-border bg-surface font-mono text-xs shadow-soft data-[state=on]:border-ink data-[state=on]:bg-ink data-[state=on]:text-paper"
+          className="h-10 min-w-10 rounded-lg border-2 border-border bg-surface font-mono text-xs shadow-soft data-[state=on]:border-ink data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
         >
           {DIA_LABELS[dia]}
         </ToggleGroupItem>

@@ -8,7 +8,7 @@ import { DomainBadge } from "@/components/domain/domain-badge";
 import { EmptyState } from "@/components/common/empty-state";
 import { useConflitos } from "@/hooks/useConflitos";
 import type { Atividade, DiaSemana, Dominio } from "@/lib/types";
-import { cn, corPastel } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store/useAppStore";
 
 interface WeekDayPanelProps {
@@ -91,10 +91,10 @@ const WeekActivityCard = forwardRef<HTMLButtonElement, WeekActivityCardProps>(
         ref={ref}
         type="button"
         onClick={onClick}
-        style={problematico ? undefined : { backgroundColor: corPastel(cor) }}
+        style={problematico ? undefined : { borderColor: cor }}
         className={cn(
-          "flex w-full items-center gap-3 rounded-3xl p-4 text-left shadow-card transition-shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink",
-          problematico && "border-2 border-dashed border-conflict bg-conflict/5",
+          "flex w-full items-center gap-3 rounded-xl border-2 bg-surface p-4 text-left shadow-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink",
+          problematico && "border-dashed border-conflict bg-conflict/5",
         )}
         {...props}
       >

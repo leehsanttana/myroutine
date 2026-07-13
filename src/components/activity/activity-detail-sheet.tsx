@@ -57,7 +57,7 @@ export function ActivityDetailSheet() {
   return (
     <>
       <Sheet open={open} onOpenChange={(v) => !v && fecharSheet()}>
-        <SheetContent side="bottom" className="flex max-h-[85vh] flex-col rounded-t-3xl">
+        <SheetContent side="bottom" className="flex max-h-[85vh] flex-col rounded-t-xl">
           {atividade && dominio ? (
             <>
               <SheetHeader className="gap-1 pr-12">
@@ -131,7 +131,7 @@ export function ActivityDetailSheet() {
       </Sheet>
 
       <Dialog open={confirmarExclusao} onOpenChange={setConfirmarExclusao}>
-        <DialogContent showCloseButton={false} className="rounded-2xl">
+        <DialogContent showCloseButton={false} className="rounded-xl">
           <DialogHeader>
             <DialogTitle className="font-display text-lg font-semibold">
               Excluir atividade?

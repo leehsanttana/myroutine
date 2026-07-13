@@ -23,8 +23,8 @@ export function BottomNav() {
               <Link
                 href={href}
                 className={cn(
-                  "flex flex-col items-center gap-1 rounded-2xl py-2.5 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ink",
-                  active ? "bg-ink text-paper" : "text-ink-muted hover:text-ink",
+                  "flex flex-col items-center gap-1 rounded-lg py-2.5 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ink",
+                  active ? "bg-primary text-primary-foreground" : "text-ink-muted hover:text-ink",
                 )}
                 aria-current={active ? "page" : undefined}
               >

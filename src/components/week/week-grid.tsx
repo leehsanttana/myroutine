@@ -38,7 +38,7 @@ export function WeekGrid() {
               <ConflictSuggestionPopover key={atividade.id} atividade={atividade}>
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between gap-2 rounded-2xl border-2 border-dashed border-conflict bg-conflict/10 px-4 py-3 text-left"
+                  className="flex w-full items-center justify-between gap-2 rounded-lg border-2 border-dashed border-conflict bg-conflict/10 px-4 py-3 text-left"
                 >
                   <span className="flex items-center gap-2">
                     <AlertTriangle className="size-4 shrink-0 text-conflict" strokeWidth={2.5} />

@@ -73,7 +73,7 @@ export function ActivityFormSheet() {
 
   return (
     <Sheet open={open} onOpenChange={(v) => !v && fecharSheet()}>
-      <SheetContent side="bottom" className="max-h-[90vh] rounded-t-3xl">
+      <SheetContent side="bottom" className="max-h-[90vh] rounded-t-xl">
         {open && (
           <ActivityFormBody
             key={modoEdicao ? `editar-${atividadeSelecionadaId}` : "criar"}
@@ -254,7 +254,7 @@ function ActivityFormBody({ modoEdicao, atividadeId }: ActivityFormBodyProps) {
           Cancelar
         </Button>
         <Button
-          className="flex-1 bg-ink text-paper hover:bg-ink/90"
+          className="flex-1"
           disabled={!podeSalvar}
           onClick={handleSalvar}
         >
