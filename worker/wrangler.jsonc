@@ -1,0 +1,30 @@
+{
+  // Worker de lembretes: recebe inscrições de push e, via Cron Trigger (a cada
+  // minuto), envia notificações Web Push ~15 min antes das atividades.
+  "name": "myroutine-push",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-12",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+  },
+  "triggers": {
+    "crons": ["* * * * *"],
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SUBS",
+      // Rode `npx wrangler kv namespace create SUBS` e cole o id gerado aqui.
+      "id": "c08b20fe8d524c1c8f491383389c3734",
+      "remote": true,
+    },
+  ],
+  "vars": {
+    "VAPID_SUBJECT": "mailto:leonamsanttana@gmail.com",
+    // Chave pública VAPID (a mesma usada no app). Pública — pode ficar aqui.
+    "VAPID_PUBLIC_KEY": "BFdLppfhB5ihyF2IlAYRwF3wv5KFyu2raZLtyIGScGe5oJk8daz8qHLqKw80mApYurpkZ-MZIOXvJiJGMrTzet4",
+    // Origem do app para o CORS (ex.: https://myroutine.pages.dev). "*" libera todas.
+    "ALLOWED_ORIGIN": "*",
+  },
+  // A chave PRIVADA vai como secret: `npx wrangler secret put VAPID_PRIVATE_KEY`
+}
